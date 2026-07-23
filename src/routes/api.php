@@ -8,11 +8,8 @@ Route::get('/eventos', [EventoController::class, 'index']);
 Route::get('/eventos/{id}', [EventoController::class, 'show']);
 
 // Rutas protegidas
-Route::middleware('auth:api')->group(function () {
+Route::post('/eventos', [EventoController::class, 'store']);
 
-    Route::post('/eventos', [EventoController::class, 'store']);
+Route::put('/eventos/{id}', [EventoController::class, 'update']);
 
-    Route::put('/eventos/{id}', [EventoController::class, 'update']);
-
-    Route::delete('/eventos/{id}', [EventoController::class, 'destroy']);
-});
+Route::delete('/eventos/{id}', [EventoController::class, 'destroy']);

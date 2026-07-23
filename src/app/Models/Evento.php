@@ -11,4 +11,4 @@ class Evento extends Model
         'fecha',
         'lugar'
     ];
-}
+} 
